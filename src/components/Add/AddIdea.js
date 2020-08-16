@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+
 export default class AddIdea extends Component {
   render() {
     return (
@@ -12,7 +15,17 @@ export default class AddIdea extends Component {
           </Navbar.Brand>
         </Container>
         <Container>
-            Add
+          <Card>
+            <Card.Header as="h5">Post New Idea</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional
+                content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
         </Container>
       </React.Fragment>
     );
