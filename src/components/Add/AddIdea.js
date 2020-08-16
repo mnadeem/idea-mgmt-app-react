@@ -6,7 +6,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
 import Alert from 'react-bootstrap/Alert'
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 
 export default class AddIdea extends Component {
 
@@ -38,7 +37,9 @@ export default class AddIdea extends Component {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
       this.setState({
-        showAlert: true
+        showAlert: true,
+        description: '',
+        title: ''
       });
     }
     event.preventDefault();
@@ -46,12 +47,10 @@ export default class AddIdea extends Component {
     this.setState({
       validated: true
     });
-    console.log(this.state);
   }
 
   render() {
-
-    return (
+    return ( 
       <React.Fragment>
         <Container>
           <Navbar.Brand href="#/list">
@@ -72,7 +71,7 @@ export default class AddIdea extends Component {
             <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit}>
                 <Form.Group controlId="AddIdeaForm.title">
                   <Form.Label>Title</Form.Label>
-                  <Form.Control name="title" type="text" placeholder="Enter Title" onChange={this.handleChange} required/>
+                  <Form.Control name="title" type="text" placeholder="Enter Title" value={this.state.title} onChange={this.handleChange} required/>
                   <Form.Control.Feedback type="invalid">
                     Please Provide Title.
                   </Form.Control.Feedback>
@@ -84,7 +83,7 @@ export default class AddIdea extends Component {
 
                 <Form.Group controlId="AddIdeaForm.description">
                   <Form.Label>Description</Form.Label>                  
-                  <Form.Control name="description" type="text" placeholder="Enter Description" onChange={this.handleChange} required/>
+                  <Form.Control name="description" type="text" value={this.state.description} placeholder="Enter Description" onChange={this.handleChange} required/>
                   <Form.Control.Feedback type="invalid">
                     Please Provide Description.
                   </Form.Control.Feedback>
