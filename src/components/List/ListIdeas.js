@@ -10,7 +10,7 @@ export default class ListIdeas extends Component {
     return (
       <React.Fragment>
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="#/add">
             <Icon name="add" color="#61dafb" size={35} /> Post An Idea
           </Navbar.Brand>
         </Container>
