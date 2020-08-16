@@ -42,12 +42,12 @@ export default class ListIdeas extends Component {
                   <td>Mark</td>
                   <td>Otto</td>
                   <td>
-                    <a href onClick={()=> this.thumbsUp()} className="clickable">
+                    <span href onClick={()=> this.thumbsUp()} className="clickable">
                       <Icon name="thumbs-up" size={35}/>
-                    </a>
-                    <a href onClick={()=> this.thumbsDown()} className="clickable">
+                    </span>
+                    <span href onClick={()=> this.thumbsDown()} className="clickable">
                       <Icon name="thumbs-down" size={35} onClick={()=> this.thumbsDown()} />
-                    </a> 
+                    </span> 
                     <Link to={`/update/1`}><Icon name="update" size={35} /></Link> 
                   </td>
                 </tr>
@@ -56,12 +56,12 @@ export default class ListIdeas extends Component {
                   <td>Jacob</td>
                   <td>Thornton</td>
                   <td>
-                    <a href onClick={()=> this.thumbsUp()} className="clickable">
+                    <span href onClick={()=> this.thumbsUp()} className="clickable">
                       <Icon name="thumbs-up" size={35}/>
-                    </a>
-                    <a href onClick={()=> this.thumbsDown()} className="clickable">
+                    </span>
+                    <span href onClick={()=> this.thumbsDown()} className="clickable">
                       <Icon name="thumbs-down" size={35} onClick={()=> this.thumbsDown()} />
-                    </a> 
+                    </span> 
                     <Link to={`/update/1`}><Icon name="update" size={35} /></Link> 
                   </td>
                 </tr>
@@ -70,12 +70,12 @@ export default class ListIdeas extends Component {
                   <td>Jacob</td>
                   <td>Larry the Bird</td>
                   <td>
-                    <a href onClick={()=> this.thumbsUp()} className="clickable">
+                    <span href onClick={()=> this.thumbsUp()} className="clickable">
                       <Icon name="thumbs-up" size={35}/>
-                    </a>
-                    <a href onClick={()=> this.thumbsDown()} className="clickable">
+                    </span>
+                    <span href onClick={()=> this.thumbsDown()} className="clickable">
                       <Icon name="thumbs-down" size={35} onClick={()=> this.thumbsDown()} />
-                    </a> 
+                    </span> 
                     <Link to={`/update/1`}><Icon name="update" size={35} /></Link> 
                   </td>
                 </tr>
