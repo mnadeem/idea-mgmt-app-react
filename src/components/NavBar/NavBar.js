@@ -11,7 +11,7 @@ export default class NavBar extends Component {
   render() {
     return (
       <Navbar expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#/list">
           <Icon
             name="logo"
             color="#FFFFFF"
