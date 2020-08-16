@@ -14,6 +14,7 @@ export default class ListIdeas extends Component {
             <Icon name="add" color="#61dafb" size={35} /> Post An Idea
           </Navbar.Brand>
         </Container>
+        <br />
         <Container>
           <Container>
             <Table striped bordered hover>
@@ -22,7 +23,7 @@ export default class ListIdeas extends Component {
                   <th>#</th>
                   <th>First Name</th>
                   <th>Last Name</th>
-                  <th>Username</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -30,18 +31,31 @@ export default class ListIdeas extends Component {
                   <td>1</td>
                   <td>Mark</td>
                   <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>
+                    <Icon name="thumbs-up" size={35} />
+                    <Icon name="thumbs-down" size={35} />
+                    <Icon name="edit" size={35} />
+                  </td>
                 </tr>
                 <tr>
                   <td>2</td>
                   <td>Jacob</td>
                   <td>Thornton</td>
-                  <td>@fat</td>
+                  <td>
+                    <Icon name="thumbs-up" size={35} />
+                    <Icon name="thumbs-down" size={35} />
+                    <Icon name="edit" size={35} />
+                  </td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td colSpan="2">Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>Jacob</td>
+                  <td>Larry the Bird</td>
+                  <td>
+                    <Icon name="thumbs-up" size={35} />
+                    <Icon name="thumbs-down" size={35} />
+                    <Icon name="edit" size={35} />
+                  </td>
                 </tr>
               </tbody>
             </Table>
