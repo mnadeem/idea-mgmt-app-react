@@ -13,7 +13,7 @@ export default class Body extends Component {
         <Route path="/" component={Empty} />
         <Route path="/list" component={ListIdeas} />
         <Route path="/add" component={AddIdea} />
-        <Route path="/update" component={UpdateIdea} />
+        <Route path="/update/:id" component={UpdateIdea} />
       </HashRouter>
     );
   }

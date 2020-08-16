@@ -3,6 +3,12 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
 export default class UpdateIdea extends Component {
+
+  componentDidMount() {
+    const { match: { params } } = this.props;
+    console.log(params.id);
+  }
+
   render() {
     return (
       <React.Fragment>
