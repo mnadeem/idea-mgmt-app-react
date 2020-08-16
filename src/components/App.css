@@ -1,16 +1,16 @@
 @font-face {
   font-family: GraphikRegular;
-  src: url('../fonts/graphik/Graphik-Regular.otf');
+  src: url('../assets/fonts/graphik/Graphik-Regular.otf');
 }
 
 @font-face {
   font-family: GraphikMedium;
-  src: url('../fonts/graphik/Graphik-Medium.otf');
+  src: url('../assets/fonts/graphik/Graphik-Medium.otf');
 }
 
 @font-face {
   font-family: GraphikSemiBold;
-  src: url('../fonts/graphik/Graphik-Semibold.otf');
+  src: url('../assets/fonts/graphik/Graphik-Semibold.otf');
 }
 
 html, body {
@@ -45,7 +45,6 @@ body {
 }
 
 .app-logo {
-  height: 40vmin;
   pointer-events: none;
 }
 

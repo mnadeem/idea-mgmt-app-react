@@ -6,14 +6,19 @@ import Icon from "../Icon/Icon";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
 
 export default class NavBar extends Component {
   render() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="#home">
-          <Icon name="logo" color="#FFFFFF" size={35} alt="logo" />
+        <Icon
+          name="logo"
+          color="#FFFFFF"
+          size={40}
+          classNames="app-logo"
+          alt="logo"
+        />
           Idea Bank
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
