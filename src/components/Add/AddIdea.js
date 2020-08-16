@@ -22,8 +22,7 @@ export default class AddIdea extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange(event) {
+  handleChange = (event) => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -33,7 +32,7 @@ export default class AddIdea extends Component {
     });    
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
       this.setState({
