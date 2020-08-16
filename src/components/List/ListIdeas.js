@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Navbar from "react-bootstrap/Navbar";
-import Icon from "../Icon/Icon";
 import Table from "react-bootstrap/Table";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Icon from "../Icon/Icon";
 
 export default class ListIdeas extends Component {
 
@@ -26,7 +27,9 @@ export default class ListIdeas extends Component {
         </Container>
         <br />
         <Container>
-          <Container>
+          <Card>
+            <Card.Header as="h5">Ideas</Card.Header>
+            <Card.Body>
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -81,7 +84,8 @@ export default class ListIdeas extends Component {
                 </tr>
               </tbody>
             </Table>
-          </Container>
+            </Card.Body>
+          </Card>
         </Container>
       </React.Fragment>
     );

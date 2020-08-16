@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+
+
 
 export default class AddIdea extends Component {
   render() {

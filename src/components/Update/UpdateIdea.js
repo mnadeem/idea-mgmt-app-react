@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
@@ -18,7 +20,17 @@ export default class UpdateIdea extends Component {
           </Navbar.Brand>
         </Container>
         <Container>
-            Update
+          <Card>
+            <Card.Header as="h5">Update Idea</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional
+                content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
         </Container>
       </React.Fragment>
     );
