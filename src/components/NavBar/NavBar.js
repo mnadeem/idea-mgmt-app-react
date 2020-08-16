@@ -22,6 +22,13 @@ export default class NavBar extends Component {
           </Form>
         </Nav>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end">   
+          <NavDropdown title="Signed in as: Mark Otto" id="collasible-nav-dropdown">         
+            <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>           
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Sign out</NavDropdown.Item>
+        </NavDropdown>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
