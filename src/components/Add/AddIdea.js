@@ -8,8 +8,6 @@ import Alert from 'react-bootstrap/Alert'
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 
-
-
 export default class AddIdea extends Component {
 
   constructor(props) {
@@ -19,11 +17,7 @@ export default class AddIdea extends Component {
       showAlert: false,
       title: null,
       description: null,
-      validated:false,
-      errors: {
-        title: '',
-        description: ''
-      }
+      validated:false
     };
 
     this.handleChange = this.handleChange.bind(this);
