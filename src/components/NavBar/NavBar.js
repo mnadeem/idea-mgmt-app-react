@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 export default class NavBar extends Component {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="#home">
           <Icon
             name="logo"
