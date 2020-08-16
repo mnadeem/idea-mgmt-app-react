@@ -6,6 +6,7 @@ import Icon from "../Icon/Icon";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 export default class NavBar extends Component {
   render() {
@@ -15,19 +16,25 @@ export default class NavBar extends Component {
           <Icon name="logo" color="#FFFFFF" size={35} alt="logo" />
           Idea Bank
         </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
-        </Nav>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse className="justify-content-end">   
-          <NavDropdown title="Signed in as: Mark Otto" id="collasible-nav-dropdown">         
-            <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>           
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Sign out</NavDropdown.Item>
-        </NavDropdown>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Form inline>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+              />
+              <Button variant="outline-info">Search</Button>
+            </Form>
+          </Nav>
+          <Navbar.Collapse className="justify-content-end">
+            <NavDropdown title="Signed in as: Mark Otto">
+              <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Sign out</NavDropdown.Item>
+            </NavDropdown>
+          </Navbar.Collapse>
         </Navbar.Collapse>
       </Navbar>
     );
