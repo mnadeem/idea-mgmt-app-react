@@ -32,12 +32,12 @@ export default class AddIdea extends Component {
 
   handleChange(event) {
     const target = event.target;
-    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const value = target.value;
     const name = target.name;
 
     this.setState({
       [name]: value
-    });
+    });    
   }
 
   handleSubmit(event) {
@@ -52,6 +52,7 @@ export default class AddIdea extends Component {
     this.setState({
       validated: true
     });
+    console.log(this.state);
   }
 
   render() {
@@ -77,7 +78,7 @@ export default class AddIdea extends Component {
             <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit}>
                 <Form.Group controlId="AddIdeaForm.title">
                   <Form.Label>Title</Form.Label>
-                  <Form.Control name="title" type="text" placeholder="Enter Title" required/>
+                  <Form.Control name="title" type="text" placeholder="Enter Title" onChange={this.handleChange} required/>
                   <Form.Control.Feedback type="invalid">
                     Please Provide Title.
                   </Form.Control.Feedback>
@@ -89,7 +90,7 @@ export default class AddIdea extends Component {
 
                 <Form.Group controlId="AddIdeaForm.description">
                   <Form.Label>Description</Form.Label>                  
-                  <Form.Control  name="description" type="text" placeholder="Enter Description" required/>
+                  <Form.Control name="description" type="text" placeholder="Enter Description" onChange={this.handleChange} required/>
                   <Form.Control.Feedback type="invalid">
                     Please Provide Description.
                   </Form.Control.Feedback>
