@@ -5,6 +5,9 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
 import Alert from 'react-bootstrap/Alert'
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+
 
 
 export default class AddIdea extends Component {
@@ -13,8 +16,42 @@ export default class AddIdea extends Component {
     super(props);
 
     this.state = {
-      showAlert: false
+      showAlert: false,
+      title: null,
+      description: null,
+      validated:false,
+      errors: {
+        title: '',
+        description: ''
+      }
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const target = event.target;
+    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(event) {
+    const form = event.currentTarget;
+    if (form.checkValidity() === true) {
+      this.setState({
+        showAlert: true
+      });
+    }
+    event.preventDefault();
+    event.stopPropagation();
+    this.setState({
+      validated: true
+    });
   }
 
   render() {
@@ -37,11 +74,32 @@ export default class AddIdea extends Component {
           <Card>
             <Card.Header as="h5">Post New Idea</Card.Header>
             <Card.Body>
-              <Card.Title></Card.Title>
-              <Card.Text>
-               
-              </Card.Text>
-              <Button variant="primary" onClick={() => this.setState({ showAlert: true })}>Save</Button>
+            <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit}>
+                <Form.Group controlId="AddIdeaForm.title">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control name="title" type="text" placeholder="Enter Title" required/>
+                  <Form.Control.Feedback type="invalid">
+                    Please Provide Title.
+                  </Form.Control.Feedback>
+                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Text className="text-muted">
+                    It should describe it the best
+                  </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="AddIdeaForm.description">
+                  <Form.Label>Description</Form.Label>                  
+                  <Form.Control  name="description" type="text" placeholder="Enter Description" required/>
+                  <Form.Control.Feedback type="invalid">
+                    Please Provide Description.
+                  </Form.Control.Feedback>
+                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                </Form.Group>
+
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
             </Card.Body>
           </Card>
         </Container>
