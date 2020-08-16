@@ -83,7 +83,7 @@ export default class AddIdea extends Component {
 
                 <Form.Group controlId="AddIdeaForm.description">
                   <Form.Label>Description</Form.Label>                  
-                  <Form.Control name="description" type="text" value={this.state.description} placeholder="Enter Description" onChange={this.handleChange} required/>
+                  <Form.Control as="textarea" name="description" type="text" value={this.state.description} placeholder="Enter Description" onChange={this.handleChange} required/>
                   <Form.Control.Feedback type="invalid">
                     Please Provide Description.
                   </Form.Control.Feedback>
