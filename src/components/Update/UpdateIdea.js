@@ -12,7 +12,7 @@ export default class UpdateIdea extends Component {
           </Navbar.Brand>
         </Container>
         <Container>
-            
+            Update
         </Container>
       </React.Fragment>
     );

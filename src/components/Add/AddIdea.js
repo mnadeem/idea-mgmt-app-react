@@ -12,7 +12,7 @@ export default class AddIdea extends Component {
           </Navbar.Brand>
         </Container>
         <Container>
-            
+            Add
         </Container>
       </React.Fragment>
     );
