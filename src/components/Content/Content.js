@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import Icon from "../Icon/Icon";
-import ListIdeas from '../List/ListIdeas';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import Body from '../Body/Body';
 
 export default class Content extends Component {
   render() {
     return (
-      <ListIdeas />
+      <Body />
     );
   }
 }
