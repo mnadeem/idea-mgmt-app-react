@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
 import Table from "react-bootstrap/Table";
+import { Link } from "react-router-dom";
 
 export default class ListIdeas extends Component {
   render() {
@@ -34,7 +35,7 @@ export default class ListIdeas extends Component {
                   <td>
                     <Icon name="thumbs-up" size={35} />
                     <Icon name="thumbs-down" size={35} />
-                    <Icon name="edit" size={35} />
+                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link>                    
                   </td>
                 </tr>
                 <tr>
@@ -44,7 +45,7 @@ export default class ListIdeas extends Component {
                   <td>
                     <Icon name="thumbs-up" size={35} />
                     <Icon name="thumbs-down" size={35} />
-                    <Icon name="edit" size={35} />
+                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link>
                   </td>
                 </tr>
                 <tr>
@@ -54,7 +55,7 @@ export default class ListIdeas extends Component {
                   <td>
                     <Icon name="thumbs-up" size={35} />
                     <Icon name="thumbs-down" size={35} />
-                    <Icon name="edit" size={35} />
+                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link>
                   </td>
                 </tr>
               </tbody>
