@@ -7,6 +7,15 @@ import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 
 export default class ListIdeas extends Component {
+
+  thumbsUp = () => {
+    console.log("thumbs up");
+  }
+
+  thumbsDown = () => {
+    console.log("thumbs down");
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -33,9 +42,13 @@ export default class ListIdeas extends Component {
                   <td>Mark</td>
                   <td>Otto</td>
                   <td>
-                    <Icon name="thumbs-up" size={35} />
-                    <Icon name="thumbs-down" size={35} />
-                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link>                    
+                    <a href onClick={()=> this.thumbsUp()} className="clickable">
+                      <Icon name="thumbs-up" size={35}/>
+                    </a>
+                    <a href onClick={()=> this.thumbsDown()} className="clickable">
+                      <Icon name="thumbs-down" size={35} onClick={()=> this.thumbsDown()} />
+                    </a> 
+                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link> 
                   </td>
                 </tr>
                 <tr>
@@ -43,9 +56,13 @@ export default class ListIdeas extends Component {
                   <td>Jacob</td>
                   <td>Thornton</td>
                   <td>
-                    <Icon name="thumbs-up" size={35} />
-                    <Icon name="thumbs-down" size={35} />
-                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link>
+                    <a href onClick={()=> this.thumbsUp()} className="clickable">
+                      <Icon name="thumbs-up" size={35}/>
+                    </a>
+                    <a href onClick={()=> this.thumbsDown()} className="clickable">
+                      <Icon name="thumbs-down" size={35} onClick={()=> this.thumbsDown()} />
+                    </a> 
+                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link> 
                   </td>
                 </tr>
                 <tr>
@@ -53,9 +70,13 @@ export default class ListIdeas extends Component {
                   <td>Jacob</td>
                   <td>Larry the Bird</td>
                   <td>
-                    <Icon name="thumbs-up" size={35} />
-                    <Icon name="thumbs-down" size={35} />
-                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link>
+                    <a href onClick={()=> this.thumbsUp()} className="clickable">
+                      <Icon name="thumbs-up" size={35}/>
+                    </a>
+                    <a href onClick={()=> this.thumbsDown()} className="clickable">
+                      <Icon name="thumbs-down" size={35} onClick={()=> this.thumbsDown()} />
+                    </a> 
+                    <Link to={`/update/1`}><Icon name="update" size={35} /></Link> 
                   </td>
                 </tr>
               </tbody>

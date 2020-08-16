@@ -22,6 +22,10 @@ body {
   font-family: GraphikRegular, sans-serif;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .semibold {
   font-family: GraphikSemiBold, sans-serif;
   letter-spacing: 2px;
