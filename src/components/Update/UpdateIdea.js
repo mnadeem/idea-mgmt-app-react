@@ -7,6 +7,8 @@ import Icon from "../Icon/Icon";
 import Alert from "react-bootstrap/Alert";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
+import Spinner from 'react-bootstrap/Spinner';
+import {timeout} from '../../support/Timeout';
 
 export default class UpdateIdea extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ export default class UpdateIdea extends Component {
 
     this.state = {
       showAlert: false,
+      isLoading:false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,9 +36,13 @@ export default class UpdateIdea extends Component {
     this.setState({status: event.target.value});
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
+    this.setState({
+      isLoading: true
+    });
+    await timeout(1000);
     console.log('Idea Status is: ' + this.state.status);
-    this.setState({showAlert: true});
+    this.setState({showAlert: true, isLoading: false});
     event.preventDefault();
   }
 
@@ -96,7 +103,20 @@ export default class UpdateIdea extends Component {
               <Button
                 variant="primary" type="submit"
               >
-                Update
+                {this.state.isLoading &&
+                      <React.Fragment>
+                        <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      /> Loading...
+                  </React.Fragment>
+                }
+                {!this.state.isLoading &&
+                    "Update"
+                }
               </Button>
             </Card.Body>
           </Card>

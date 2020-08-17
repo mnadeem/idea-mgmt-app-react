@@ -7,6 +7,7 @@ import Icon from "../Icon/Icon";
 import Alert from 'react-bootstrap/Alert'
 import Form from 'react-bootstrap/Form';
 import Spinner from 'react-bootstrap/Spinner';
+import {timeout} from '../../support/Timeout';
 
 export default class AddIdea extends Component {
 
@@ -48,7 +49,7 @@ export default class AddIdea extends Component {
         title: ''
       });
     }
-    await this.timeout(1000);
+    await timeout(1000);
     event.preventDefault();
     event.stopPropagation();
 
@@ -58,12 +59,7 @@ export default class AddIdea extends Component {
     });
   }
 
-  timeout = (delay) => {
-    return new Promise( res => setTimeout(res, delay) );
-  }
-
   render() {
-    let isLoading = this.state.isLoading;
     return ( 
       <React.Fragment>
         <Container>
@@ -82,7 +78,7 @@ export default class AddIdea extends Component {
           <Card>
             <Card.Header as="h5">Post New Idea</Card.Header>
             <Card.Body>
-            <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit} disabled = {isLoading ? 'disabled' : ''}>
+            <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit} >
                 
                 <Form.Group controlId="AddIdeaForm.title">
                   <Form.Label>Title</Form.Label>
@@ -114,8 +110,7 @@ export default class AddIdea extends Component {
                         size="sm"
                         role="status"
                         aria-hidden="true"
-                      />
-                      Loading...
+                      /> Loading...
                   </React.Fragment>
                 }
                 {!this.state.isLoading &&
