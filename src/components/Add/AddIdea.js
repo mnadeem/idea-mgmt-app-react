@@ -35,7 +35,7 @@ export default class AddIdea extends Component {
     });    
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     this.setState({
       isLoading: true
     });
@@ -47,12 +47,19 @@ export default class AddIdea extends Component {
         title: ''
       });
     }
+
     event.preventDefault();
     event.stopPropagation();
+    await this.timeout(1000);
+
     this.setState({
       validated: true,
       isLoading: false
     });
+  }
+
+  timeout = (delay) => {
+    return new Promise( res => setTimeout(res, delay) );
   }
 
   render() {
