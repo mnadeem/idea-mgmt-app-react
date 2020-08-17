@@ -9,6 +9,17 @@ import Icon from "../Icon/Icon";
 
 export default class ListIdeas extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      thumbs: false,
+    };
+
+    this.thumbsUp = this.thumbsUp.bind(this);
+    this.thumbsDown = this.thumbsDown.bind(this);
+  }
+
   thumbsUp = () => {
     console.log("thumbs up");
   }
