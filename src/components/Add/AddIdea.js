@@ -40,6 +40,7 @@ export default class AddIdea extends Component {
       isLoading: true
     });
     const form = event.currentTarget;
+
     if (form.checkValidity() === true) {
       this.setState({
         showAlert: true,
@@ -47,10 +48,9 @@ export default class AddIdea extends Component {
         title: ''
       });
     }
-
+    await this.timeout(1000);
     event.preventDefault();
     event.stopPropagation();
-    await this.timeout(1000);
 
     this.setState({
       validated: true,
