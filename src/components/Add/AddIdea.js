@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Icon from "../Icon/Icon";
 import Alert from 'react-bootstrap/Alert'
 import Form from 'react-bootstrap/Form';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default class AddIdea extends Component {
 
@@ -16,7 +17,8 @@ export default class AddIdea extends Component {
       showAlert: false,
       title: null,
       description: null,
-      validated:false
+      validated:false,
+      showSpinner:false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,6 +36,9 @@ export default class AddIdea extends Component {
   }
 
   handleSubmit = (event) => {
+    this.setState({
+      showSpinner: true
+    });
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
       this.setState({
@@ -45,7 +50,8 @@ export default class AddIdea extends Component {
     event.preventDefault();
     event.stopPropagation();
     this.setState({
-      validated: true
+      validated: true,
+      showSpinner: false
     });
   }
 
@@ -91,7 +97,21 @@ export default class AddIdea extends Component {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                  Submit
+                  {this.state.showSpinner &&
+                      <React.Fragment>
+                        <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                      Loading...
+                  </React.Fragment>
+                }
+                {!this.state.showSpinner &&
+                    "Submit"
+                }
                 </Button>
               </Form>
             </Card.Body>
