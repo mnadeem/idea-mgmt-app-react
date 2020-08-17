@@ -18,7 +18,7 @@ export default class AddIdea extends Component {
       title: null,
       description: null,
       validated:false,
-      showSpinner:false
+      isLoading:false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,7 @@ export default class AddIdea extends Component {
 
   handleSubmit = (event) => {
     this.setState({
-      showSpinner: true
+      isLoading: true
     });
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
@@ -51,11 +51,12 @@ export default class AddIdea extends Component {
     event.stopPropagation();
     this.setState({
       validated: true,
-      showSpinner: false
+      isLoading: false
     });
   }
 
   render() {
+    let isLoading = this.state.isLoading;
     return ( 
       <React.Fragment>
         <Container>
@@ -74,7 +75,8 @@ export default class AddIdea extends Component {
           <Card>
             <Card.Header as="h5">Post New Idea</Card.Header>
             <Card.Body>
-            <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit}>
+            <Form noValidate validated={this.state.validated}  onSubmit={this.handleSubmit} disabled = {isLoading ? 'disabled' : ''}>
+                
                 <Form.Group controlId="AddIdeaForm.title">
                   <Form.Label>Title</Form.Label>
                   <Form.Control name="title" type="text" placeholder="Enter Title" value={this.state.title} onChange={this.handleChange} required/>
@@ -97,7 +99,7 @@ export default class AddIdea extends Component {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                  {this.state.showSpinner &&
+                  {this.state.isLoading &&
                       <React.Fragment>
                         <Spinner
                         as="span"
@@ -109,7 +111,7 @@ export default class AddIdea extends Component {
                       Loading...
                   </React.Fragment>
                 }
-                {!this.state.showSpinner &&
+                {!this.state.isLoading &&
                     "Submit"
                 }
                 </Button>
