@@ -7,6 +7,8 @@ import Icon from "../Icon/Icon";
 import Alert from "react-bootstrap/Alert";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+
 export default class UpdateIdea extends Component {
   constructor(props) {
     super(props);
@@ -52,24 +54,25 @@ export default class UpdateIdea extends Component {
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroup.Item>
+              <Form.Group controlId="formStatus"> 
                 <Form.Label
                   className="mr-sm-2"
-                  htmlFor="inlineFormCustomSelect"
-                  srOnly
+                  htmlFor="updateIdeaStatus"
                 >
-                  Preference
+                  Status
                 </Form.Label>
                 <Form.Control
                   as="select"
                   className="mr-sm-2"
-                  id="inlineFormCustomSelect"
-                  custom
+                  id="updateIdeaStatus"
                 >
-                  <option value="0">Choose...</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option value="New">New</option>
+                  <option value="Candidate">Candidate</option>
+                  <option value="Abandoned">Abandoned</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Concept">Concept</option>
                 </Form.Control>
+                </Form.Group>
               </ListGroup.Item>
             </ListGroup>
             <Card.Body>
